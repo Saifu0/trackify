@@ -21,7 +21,7 @@ SECRET_KEY = os.environ.get(
 
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 
-ALLOWED_HOSTS = ['trackify-us.herokuapp.com']
+ALLOWED_HOSTS = ['trackify-us.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -36,8 +36,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'rest_framework.authtoken',
-    'corsheaders',
-    'rest_auth'
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -52,13 +51,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.urls'
-REST_USE_JWT = True
-
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "build")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,7 +132,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'build/static')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 REST_FRAMEWORK = {
@@ -147,6 +148,8 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+CSRF_COOKIE_NAME = "csrftoken"
 
 CORS_ALLOW_METHODS = [
     'DELETE',
@@ -170,7 +173,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://trackify-endpoints.herokuapp.com",
+    "https://trackify-us.herokuapp.com",
     "http://localhost:8080",
     "http://127.0.0.1:8000",
     "http://localhost:3000",
