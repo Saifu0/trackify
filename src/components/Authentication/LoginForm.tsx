@@ -22,14 +22,10 @@ function LoginForm() {
             password : values.password
         }
 
-        console.log(confidential);
-
         axios.post('signin', confidential)
             .then( res => {
-                sessionStorage.setItem("username",res.data.username);
-                sessionStorage.setItem("token",res.data.token);
-
-                console.log(sessionStorage);
+                localStorage.setItem("username",res.data.username);
+                localStorage.setItem("token",res.data.token);
 
                 history.push("/dashboard");
             })

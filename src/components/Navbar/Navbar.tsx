@@ -3,6 +3,8 @@ import { Menu, Drawer, Button } from "antd";
 import { useHistory } from "react-router-dom";
 import { Layout } from "antd";
 import { UnorderedListOutlined, LogoutOutlined } from "@ant-design/icons";
+import logo from './logo.png';
+
 const Navbar = () => {
   const history = useHistory();
 
@@ -19,6 +21,13 @@ const Navbar = () => {
   const onClose = () => {
     setVisible(false);
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("username");
+    history.push("/");
+  }
+
   return (
     <Layout style={{ width: "100%" }}>
       <Menu
@@ -34,13 +43,13 @@ const Navbar = () => {
         mode="horizontal"
       >
         <Menu.Item
-          disabled={true}
+          onClick={() => history.push("/")}
           key="mail"
           style={{ fontSize: "2em", color: "white" }}
         >
           <img
             style={{ paddingRight: ".5em" }}
-            src="favicon.ico"
+            src={logo}
             alt="logo"
           ></img>
           <b style={{ color: "white" }}>Trackify</b>
@@ -92,7 +101,12 @@ const Navbar = () => {
               <hr></hr>
             </Menu.Item>
             <Menu.Item key="5" style={{ fontSize: "1.3em" }}>
-              Logout <LogoutOutlined />
+              {
+                localStorage.getItem("token") ? 
+              <Button type="ghost" htmlType="submit" onClick={handleLogout}>Logout <LogoutOutlined /></Button>
+                :
+                <hr/>
+              }
             </Menu.Item>
           </Menu.ItemGroup>
         </Menu>
