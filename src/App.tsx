@@ -12,10 +12,10 @@ import About from "./components/Home/About/About";
 function App() {
 
   //productions
-  // axios.defaults.baseURL = "https://trackify-endpoints.herukoapp.com/";
+  axios.defaults.baseURL = "https://trackify-us.herokuapp.com/";
 
   //development
-  axios.defaults.baseURL = "http://127.0.0.1:8000";
+  // axios.defaults.baseURL = "http://127.0.0.1:8000";
 
 
   return (

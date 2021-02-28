@@ -14,7 +14,7 @@ from .views import (
 
 urlpatterns = [
     path('signup', SignUpView, name="signup"),
-    path('login', CustomAuthToken.as_view(), name="login"),
+    path('signin', CustomAuthToken.as_view(), name="login"),
     path('api/create', CreateNewOpening, name="create"),
     path('api/update', UpdateOpening, name="update"),
     path('api/toapply', ToApplyList.as_view(), name="to_apply"),

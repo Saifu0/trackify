@@ -24,7 +24,7 @@ function LoginForm() {
 
         console.log(confidential);
 
-        axios.post('login', confidential)
+        axios.post('signin', confidential)
             .then( res => {
                 sessionStorage.setItem("username",res.data.username);
                 sessionStorage.setItem("token",res.data.token);
