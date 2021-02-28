@@ -7,10 +7,7 @@ import "./index.css";
 const LandingPage = () => {
     const history = useHistory();
     useEffect(() => {
-        if (
-          sessionStorage.getItem("token") 
-        //   sessionStorage.getItem("guestmode")
-        ) {
+        if (localStorage.getItem("token")) {
           history.push("/dashboard");
         }
       },[]);
@@ -36,11 +33,11 @@ const LandingPage = () => {
   <br></br>
 
   <Row style={{display: "flex",justifyContent: "center",paddingTop: "2em"}}>
-<Button  style={{marginRight: "1em"}} onClick={Handler1} size="large" shape="round" type="primary" ghost>
+<Button  style={{marginRight: "1em"}} onClick={Handler1} size="large" shape="round" type="primary" ghost disabled={true}>
     Guest Mode!
   </Button>
   <Button onClick={Handler2}  size="large" type="primary" shape="round" >
-    Sign up for free
+    Sign up or Sign in for free
   </Button>
 </Row>
 </Row>
@@ -64,11 +61,11 @@ const LandingPage = () => {
 
 
   <Row style={{display: "flex",justifyContent: "center",paddingTop: "2em",paddingBottom: "1em"}}>
-<Button  style={{marginRight: "1em"}} onClick={Handler1} size="large" shape="round" type="primary" ghost>
+<Button  style={{marginRight: "1em"}} onClick={Handler1} size="large" shape="round" type="primary" ghost disabled={true}>
    GuestMode!
   </Button>
   <Button onClick={Handler2}  size="large" type="primary" shape="round" >
-    Sign up for free
+    Sign up or Sign in for free
   </Button>
 </Row>
 </Row>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox,Alert } from 'antd';
 
 const layout = {
     labelCol: { span: 6 },
@@ -14,6 +14,7 @@ const layout = {
 function RegisterForm() {
 
     const history = useHistory();
+    const [error, setError ] = React.useState("");
 
     const onFinish = (values: any) => {
         const confidential = {
@@ -24,12 +25,15 @@ function RegisterForm() {
 
         axios.post("signup",confidential)
             .then( res => {
-                sessionStorage.setItem("username",res.data.username);
-                sessionStorage.setItem("token",res.data.token);
+                console.log(res.data)
+                if(res.data.token===undefined){
+                    setError(res.data.username[0]);
+                }else{
+                    localStorage.setItem("username",res.data.username);
+                    localStorage.setItem("token",res.data.token);
 
-                console.log(sessionStorage);
-
-                history.push("/dashboard");
+                    history.push("/dashboard");
+                }
             })
             .catch( err => {
                 console.log(err.message);
@@ -73,15 +77,17 @@ function RegisterForm() {
                     <Input.Password />
                 </Form.Item>
 
-                <Form.Item {...tailLayout} name="remember" valuePropName="checked">
-                    <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
                 <Form.Item {...tailLayout}>
                     <Button type="primary" htmlType="submit">
                         Submit
                     </Button>
                 </Form.Item>
+                {
+                    error.length > 0 &&
+                    <Form.Item>
+                        <Alert message={error} type="error"/>
+                    </Form.Item>
+                }
             </Form>
         </>
     )

@@ -28,8 +28,7 @@ const DumbModal = ( props : Props ) => {
 
     const onFinish = (values: any) => {
         const date = moment(values.applied_date).format("YYYY-MM-DD")
-        const token = sessionStorage.getItem("token");
-
+        const token = localStorage.getItem("token");
 
         const bodyParameters = {
           company : (values.company===undefined ? props.company : values.company),
@@ -38,16 +37,12 @@ const DumbModal = ( props : Props ) => {
           notes : (values.notes===undefined ? props.notes : values.notes),
           applied_date : date
         }
-
-        console.log(bodyParameters)
-
         const config = {
             headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
         };
         if(props.update===false){
             axios.post('/api/create',bodyParameters,config)
               .then(res => {
-                console.log("Status",res.data);
                 window.location.reload();
               })
               .catch(err => {
@@ -57,15 +52,12 @@ const DumbModal = ( props : Props ) => {
             const updatedBody = {...bodyParameters, id : props.id }
             axios.post('/api/update',updatedBody,config)
               .then(res => {
-                console.log("Status",res.data)
                 window.location.reload();
               })
               .catch(err => {
                 console.log(err.message)
               })
         }
-
-        // console.log('Success:', values);
     };
 
     const onFinishFailed = (errorInfo: any) => {
