@@ -40,7 +40,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall" : "npm run build"
+    "postinstall": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -60,8 +60,8 @@
       "last 1 safari version"
     ]
   },
-  "engines" : {
-    "node" : "10.23.1",
-    "npm" : "6.14.10"
+  "engines": {
+    "node": "10.23.1",
+    "npm": "6.14.10"
   }
 }

@@ -47,7 +47,7 @@ const Navigation = () => {
    
 
     return (
-        <Container maxWidth="xs">
+        <Container maxWidth="md">
             <Paper square style={{ flexGrow : 1}}>
                 <Tabs
                     value={value}
@@ -55,6 +55,7 @@ const Navigation = () => {
                     textColor="primary"
                     onChange={handleChange}
                     centered
+                    
                 >
                     <Tab label="Login"  />
                     <Tab label="Register" />

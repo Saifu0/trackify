@@ -100,7 +100,7 @@ const Navbar = () => {
             <Menu.Item>
               <hr></hr>
             </Menu.Item>
-            <Menu.Item key="5" style={{ fontSize: "1.3em" }}>
+            <Menu.Item key="5" style={{ fontSize: "1.3em",display: "flex",justifyContent: "center" }}>
               {
                 localStorage.getItem("token") ? 
               <Button type="ghost" htmlType="submit" onClick={handleLogout}>Logout <LogoutOutlined /></Button>

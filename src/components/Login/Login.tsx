@@ -7,7 +7,7 @@ const { Content } = Layout;
 const Login = () => <>
         <Navbar />
         <Layout style={{height: "100vh",width: "100vw"}}>
-            <Content style={{paddingTop: "13vh"}}>
+            <Content style={{paddingTop: "30vh"}}>
             <Row>
                 <AuthenticationNavigation />
             </Row>

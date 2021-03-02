@@ -4,11 +4,11 @@ import axios from 'axios';
 import { Form, Input, Button, Alert } from 'antd';
 
 const layout = {
-    labelCol: { span: 6 },
-    wrapperCol: { span: 16 },
+    labelCol: { span: 12 },
+    wrapperCol: { span: 12 },
   };
   const tailLayout = {
-    wrapperCol: { offset: 6, span: 16 },
+    wrapperCol: { offset: 6, span: 12 },
   };
 
 function LoginForm() {
@@ -57,6 +57,7 @@ function LoginForm() {
                     label="Username"
                     name="username"
                     rules={[{ required: true, message: 'Please input your username!' }]}
+                    
                 >
                     <Input />
                 </Form.Item>
