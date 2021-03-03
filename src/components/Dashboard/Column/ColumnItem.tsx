@@ -6,6 +6,7 @@ import { CSSProperties } from '@material-ui/styles';
 const gridStyle : CSSProperties = {
     width: '100%',
     textAlign: 'center',
+    backgroundColor : '#141414'
 };
 
 
@@ -38,7 +39,7 @@ const ColumnItem = (props : Props) => {
       setIsModalVisible(false);
     };
     return (
-        <div style={{ width:350, marginLeft : 20 }}>
+        <div style={{ width:350, backgroundColor : "#ccc" }}>
              <div>
               <div onClick={showModal} >
                 <Card.Grid style={gridStyle}>
