@@ -45,14 +45,14 @@ const Navbar = () => {
         <Menu.Item
           onClick={() => history.push("/")}
           key="mail"
-          style={{ fontSize: "2em", color: "white" }}
+          style={{ fontSize: "2em"}}
         >
           <img
             style={{ paddingRight: ".5em" }}
             src={logo}
             alt="logo"
           ></img>
-          <b style={{ color: "white" }}>Trackify</b>
+          <b style={{ }}>Trackify</b>
         </Menu.Item>
         <Menu.Item>
           <UnorderedListOutlined
