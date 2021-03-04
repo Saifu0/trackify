@@ -47,7 +47,7 @@ const Navigation = () => {
    
 
     return (
-        <Container maxWidth="md">
+        <Container maxWidth="sm">
             <Paper square style={{ flexGrow : 1}}>
                 <Tabs
                     value={value}

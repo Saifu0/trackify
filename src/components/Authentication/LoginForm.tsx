@@ -4,11 +4,11 @@ import axios from 'axios';
 import { Form, Input, Button, Alert } from 'antd';
 
 const layout = {
-    labelCol: { span: 12 },
-    wrapperCol: { span: 12 },
+    labelCol: { span: 6 },
+    wrapperCol: { span: 16 },
   };
   const tailLayout = {
-    wrapperCol: { offset: 6, span: 12 },
+    wrapperCol: { offset: 6, span: 16 },
   };
 
 function LoginForm() {

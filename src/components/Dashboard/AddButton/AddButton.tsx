@@ -39,6 +39,7 @@ const AddButton = ( props : Props ) => {
             <Modal title="Enter Details" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
                 <ModalDetail
                     status={props.status}
+                    notes={''}
                     update={false}
                 />
             </Modal>

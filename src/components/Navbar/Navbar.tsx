@@ -45,14 +45,14 @@ const Navbar = () => {
         <Menu.Item
           onClick={() => history.push("/")}
           key="mail"
-          style={{ fontSize: "2em", color: "white" }}
+          style={{ fontSize: "2em"}}
         >
           <img
             style={{ paddingRight: ".5em" }}
             src={logo}
             alt="logo"
           ></img>
-          <b style={{ color: "white" }}>Trackify</b>
+          <b style={{ }}>Trackify</b>
         </Menu.Item>
         <Menu.Item>
           <UnorderedListOutlined
@@ -100,7 +100,7 @@ const Navbar = () => {
             <Menu.Item>
               <hr></hr>
             </Menu.Item>
-            <Menu.Item key="5" style={{ fontSize: "1.3em",display: "flex",justifyContent: "center" }}>
+            <Menu.Item key="5" style={{ fontSize: "1.3em",display: "flex",justifyContent: "center",alignItems: "center" }}>
               {
                 localStorage.getItem("token") ? 
               <Button type="ghost" htmlType="submit" onClick={handleLogout}>Logout <LogoutOutlined /></Button>
