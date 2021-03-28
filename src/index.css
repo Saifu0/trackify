@@ -1,0 +1,23 @@
+@import "~antd/dist/antd.dark.css";
+/* @import '~antd/dist/antd.compact.css'; */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+  background-color: #162129;
+  margin: 0;
+  font-family: "Inconsolata", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

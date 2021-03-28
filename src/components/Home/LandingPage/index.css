@@ -1,0 +1,22 @@
+
+.glow {
+  font-size:3.5em;
+  text-align:center;
+  display: flex;
+  justify-content: center;
+padding-top: 0%;
+padding-bottom: 1%;
+  align-items: center;
+font-weight: bolder;
+  color: silver;
+
+}
+
+.image {
+  height: 60%;
+  width:92%;
+  padding-top: 3em;
+  border: 1px solid black;
+  border-radius: 1em;
+}
+

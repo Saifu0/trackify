@@ -1,0 +1,27 @@
+.bold {
+
+  color: #C7C7C5;
+  font-weight: bolder;
+  display: inline;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.7em;
+  color: #A0A0A0
+}
+
+.row1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.img {
+  height: 3em;
+  width: 3em;
+  border-radius: 1em;
+}
