@@ -1,36 +1,66 @@
-import React from 'react';
+import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import "./index.css";
 
 function AppContact() {
 
-  function sendEmail(e : any) {
+  function sendEmail(e: any) {
     e.preventDefault();
 
     emailjs.sendForm('gmail', 'template_p83ieqj', e.target, 'user_5KdWH0MXyGxP2ccaRFSLm')
       .then((result) => {
-          console.log(result.text);
+        console.log(result.text);
       }, (error) => {
-          console.log(error.text);
+        console.log(error.text);
       });
-  }
+    setTimeout(() => {
+      e.target.reset();
+    }, 1000);
 
+
+  }
+  const [show, setShow] = useState(false);
   return (
-    <form 
-      className="contact-form" 
-      onSubmit={sendEmail}
-      style={{marginTop : 100}}
-    >
-      <input type="hidden" name="contact_number" />
-      <label>Name</label>
-      <input type="text" name="name" />
-      <label>Subject</label>
-      <input type="text" name="subject" />
-      <label>Email</label>
-      <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
-      <input type="submit" value="Send" />
-    </form>
+    <>
+      <form
+        className="flexing"
+        onSubmit={sendEmail}
+        style={{ marginTop: 100 }}
+      >
+        <Container>
+          <Row className="flexing" >
+
+
+            <input type="text" name="contact_number" placeholder="Name" style={{ borderRadius: ".5em" }} />
+
+
+
+          </Row>
+          <Row className="flexing" >
+
+            <input type="text" name="name" placeholder="Email" style={{ borderRadius: ".5em" }} />
+
+          </Row>
+          <Row className="flexing" >
+
+            <input type="text" name="subject" placeholder="Subject" style={{ borderRadius: ".5em" }} />
+
+          </Row>
+          <Row className="flexing" >
+
+
+            <textarea name="message" placeholder="Message" style={{ borderRadius: ".5em" }} />
+          </Row>
+          <Row className="flexing" >
+            <input type="submit" value="Send" style={{ borderRadius: ".5em" }} id="submit" />
+          </Row>
+        </Container>
+      </form>
+
+
+    </>
   );
 }
 

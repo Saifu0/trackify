@@ -1,8 +1,28 @@
-#contact {
-    
-    
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #162129;
+.flexing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5em;
+}
+
+::placeholder {
+    color: #162129;
+    opacity: 1;
+    text-align: center;
+}
+
+input {
+    width: 60vw;
+    background: silver;
+    color: #162129;
+}
+
+textarea {
+    width: 60vw;
+    background: silver;
+    color: #162129;
+}
+
+#submit:hover {
+    background-color: #34eb92;
 }
