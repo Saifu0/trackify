@@ -11,9 +11,7 @@ const Navbar = () => {
   const Handler1 = () => {
     history.push("/about");
   };
-  const Handler2 = () => {
-    history.push("/contact");
-  };
+  
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
     setVisible(true);
@@ -68,9 +66,6 @@ const Navbar = () => {
         <Menu style={{ backgroundColor: "transparent" }}>
           <Menu.Item key="1" style={{ fontSize: "1.3em" }} onClick={Handler1}>
             About Us
-          </Menu.Item>
-          <Menu.Item key="2" style={{ fontSize: "1.3em" }} onClick={Handler2}>
-            Contact US
           </Menu.Item>
           <Menu.Item>
             <hr></hr>
